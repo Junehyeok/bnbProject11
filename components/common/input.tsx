@@ -32,7 +32,7 @@ type InputContainerProps = {
       border-color: ${palette.dark_cyan};
     }
   }
-  .svg {
+  svg {
     position: absolute;
     right: 11px;
     height: 46px;

@@ -8,8 +8,10 @@ import user from "./user";
 import { UserType } from "../types/user";
 import common from "./common";
 import auth from "./auth";
+import registerRoom from "./registerRoom";
 
 const rootReducer = combineReducers({
+    registerRoom: registerRoom.reducer,
     common: common.reducer,
     user: user.reducer,
     auth: auth.reducer,
