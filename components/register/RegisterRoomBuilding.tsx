@@ -101,21 +101,19 @@ const RegisterRoomBuilding: React.FC = () => {
     };
 
     // * 숙소 유형 변경
-    const onChangeRoomType = (event: React.ChangeEvent<HTMLInputElement>) => {
+    /*const onChangeRoomType = (event: React.ChangeEvent<HTMLInputElement>) => {
       const selected = event.target.value;
-      console.log("onChangeRoomType");
-      console.log(selected);
       dispatch(
         registerRoomActions.setRoomType(
           selected as "entire" | "private" | "public"
         )
       );
-    };
+    };*/
 
     //* 숙소 유형 변경시
-    /*const onChangeRoomType = (value: any) => {
+    const onChangeRoomType = (value: any) => {
       dispatch(registerRoomActions.setRoomType(value));
-    };*/
+    };
 
     //* 게스트용 숙소인지 변경시
     const onChangeIsSetUpForGuest = (value: any) => {
@@ -124,7 +122,7 @@ const RegisterRoomBuilding: React.FC = () => {
 
     //* 모든값이 있는지 확인하기
     const isValid = useMemo(() => {
-      if (!largeBuildingType || !buildingType || !roomType || !isSetUpForGuest === null) {
+      if (!largeBuildingType || !buildingType || !roomType || isSetUpForGuest === null) {
         return false;
       }
       return true;
@@ -180,7 +178,7 @@ const RegisterRoomBuilding: React.FC = () => {
           return boutiquesHotelBuildingTypeList;
         }
         default:
-          return ["아파트"];
+          return [];
       }
     }, [largeBuildingType]);
 
